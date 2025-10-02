@@ -9,10 +9,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from collections import defaultdict
 import google.generativeai as genai
-from dotenv import load_dotenv
 
-# Load environment variables for local development
-load_dotenv()
 
 # Configuration
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
@@ -20,11 +17,8 @@ SPREADSHEET_NAME = "Anime Database"
 SERVICE_ACCOUNT_FILE = "Credentials.json"
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-LOG_CHANNEL_ID = int(os.getenv("LOG_CHANNEL_ID", "-1003009041116"))
-AUTHORIZED_UPLOADERS = [
-    6146353175,
-    2010016480,
-]
+LOG_CHANNEL_ID = int(os.getenv("LOG_CHANNEL_ID", "your channel id"))
+AUTHORIZED_UPLOADERS = [ "your id" , " friend id"]
 genai.configure(api_key=GEMINI_API_KEY)
 class GeminiAssistant:
     def __init__(self):
