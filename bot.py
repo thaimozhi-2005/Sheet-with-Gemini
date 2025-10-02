@@ -185,7 +185,7 @@ Return ONLY valid JSON."""
             response = self.model.generate_content(prompt)
             result = response.text.strip()
            
-            if result.startswith('```json
+            if result.startswith('```json'):
                 result = result[7:]
             if result.startswith('```'):
                 result = result[3:]
